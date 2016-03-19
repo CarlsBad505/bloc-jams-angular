@@ -47,7 +47,7 @@
 			]
 		};
 		
-		Fixtures.getAlbum = function() { //why don't we use this.getAlbum instead of Fixtures.getAlbum?
+		Fixtures.getAlbum = function() { 
 			return albumPicasso;	
 		};
 		
