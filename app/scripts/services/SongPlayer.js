@@ -44,7 +44,7 @@
 					SongPlayer.currentTime = currentBuzzObject.getTime();
 				});
 			});
-
+			
 			SongPlayer.currentSong = song;
 		};
 		
@@ -117,6 +117,20 @@
 			if (currentBuzzObject) {
 				currentBuzzObject.setTime(time);
 			}
+		};
+		
+		SongPlayer.volume = 80;
+		
+		SongPlayer.setVolume = function(volume) {
+			if (currentBuzzObject) {
+				currentBuzzObject.setVolume(volume);
+			}
+			
+			currentBuzzObject.bind('volumechange', function() {
+				$rootScope.$apply(function() {
+					SongPlayer.volume = currentBuzzObject.getVolume();
+				});
+			});
 		};
 		
 		return SongPlayer;
