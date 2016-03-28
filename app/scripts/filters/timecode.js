@@ -7,17 +7,25 @@
 				return '-:--';
 			}
 			
-			var wholeSeconds = Math.floor(seconds);
-			var minutes = Math.floor(wholeSeconds / 60);
-			var remainingSeconds = wholeSeconds % 60;
+			var output = buzz.toTimer(seconds);
 			
-			var output = minutes + ':';
-			
-			if (remainingSeconds < 10) {
-				output += '0';
+//			var wholeSeconds = Math.floor(seconds);
+//			var minutes = Math.floor(wholeSeconds / 60);
+//			var remainingSeconds = wholeSeconds % 60;
+//			
+//			var output = minutes + ':';
+//			
+//			if (remainingSeconds < 10) {
+//				output += '0';
+//			}
+//			
+//			output += remainingSeconds;
+//			
+			var arrayOutput = output.split('');
+			if (arrayOutput[0] = "0") {
+				arrayOutput.splice(0, 1);
+				var output = arrayOutput.join('');
 			}
-			
-			output += remainingSeconds;
 			
 			return output;
 		};
